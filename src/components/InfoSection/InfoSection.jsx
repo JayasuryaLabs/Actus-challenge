@@ -13,8 +13,8 @@ const InfoSection = () => {
       <div className="section-header">
         <div className="header-content">
           <h1 className="button-info" data-text="Awesome" onClick={toggleSection}>
-            <span className="actual-text">&nbsp;Galadriel&nbsp;</span>
-            <span aria-hidden="true" className="front-text">&nbsp;Galadriel&nbsp;</span>
+            <span className="actual-text">&nbsp;Actus&nbsp;</span>
+            <span aria-hidden="true" className="front-text">&nbsp;Actus&nbsp;</span>
           </h1>
         </div>
         {isOpen && (

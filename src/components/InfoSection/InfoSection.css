@@ -54,7 +54,7 @@
   --color-gar: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
   letter-spacing: 3px;
   font-size: 2em;
-  font-family: "Arial";
+  font-family: 'Gentium Basic', serif;
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px var(--stroke-color);

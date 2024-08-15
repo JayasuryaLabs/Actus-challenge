@@ -6,7 +6,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('../../../public/img2.avif') no-repeat center center/cover; /* Background image */
+  background: url('../../../public/img2.avif') no-repeat center center/cover;
+  margin-top: 0px; /* Background image */
   color: white;
   text-align: center;
   opacity: 0; /* Start with hidden content */

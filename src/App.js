@@ -5,6 +5,7 @@ import HackathonInfo from './components/HackathonInfo/HackathonInfo';
 import InfoSection from './components/InfoSection/InfoSection';
 // import ThemeToggle from './ThemeToggle/ThemeToggle';
 import './App.css';
+import Schedule from './components/Schedule/Schedule';
 
 function App() {
   return (
@@ -14,7 +15,10 @@ function App() {
       <Main />
       <HackathonInfo />
       <InfoSection />
+      
+      <Schedule/>
       <Footer />
+
     </>
   );
 }

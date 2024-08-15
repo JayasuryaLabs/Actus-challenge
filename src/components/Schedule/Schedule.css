@@ -1,0 +1,93 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap');
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Gentium Basic', serif;
+  background-color: #121212; /* Updated background color */
+  color: #ffffff;
+}
+
+/* Table Heading */
+.table-heading {
+  text-align: center;
+  color: #61dafb; /* Light blue color */
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(97, 218, 251, 0.7); /* Light blue glow */
+}
+
+/* Week Selector Buttons */
+.weeks {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .weeks button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* White text color */
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .weeks button:hover {
+    background-color: #61dafb; /* Light blue background on hover */
+    color: #282c34; /* Dark text on hover */
+    box-shadow: 0 0 10px #61dafb; /* Light blue glow effect on hover */
+  }
+  
+  .weeks button:focus {
+    outline: none;
+    background-color: #61dafb; /* Keep the light blue background on focus */
+    color: #282c34; /* Dark text on focus */
+    box-shadow: 0 0 10px #61dafb; /* Keep the glow effect on focus */
+  }
+  
+/* Schedule Table */
+.table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.6); /* Transparent background */
+  color: #fff;
+  border: 3px double #61dafb; /* Double border in light blue */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+.table thead th {
+  border-bottom: 3px double #61dafb; /* Double border for the table header */
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background */
+  text-shadow: 0 0 10px rgba(97, 218, 251, 0.7); /* Light blue glow */
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #61dafb; /* Light blue border */
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle highlight on hover */
+}
+
+.table td, .table th {
+  padding: 12px;
+  border-right: 1px solid #61dafb; /* Vertical borders in light blue */
+}
+
+.table th:last-child, .table td:last-child {
+  border-right: none; /* Remove the right border for the last column */
+}
