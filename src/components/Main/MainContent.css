@@ -1,29 +1,71 @@
+/* MainContent.css */
+
 .main-content {
-    background-image: url('../../../public/mainimg.avif');
-    background-size: cover;
-    background-position: center;
-    height: 80vh; /* Full height of the viewport */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Align content to the left */
-    padding-left: 50px; /* Adjust padding as needed */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('../../../public/img2.avif') no-repeat center center/cover; /* Background image */
+  color: white;
+  text-align: center;
+  opacity: 0; /* Start with hidden content */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth fade-in and scale transition */
+}
+
+.main-content.reveal {
+  opacity: 1; /* Fully visible */
+  transform: scale(1); /* Reset scale on reveal */
+}
+
+.main-header {
+  max-width: 700px;
+  z-index: 1;
+  transform: scale(0.9); /* Slightly scaled down initially */
+}
+
+.main-title {
+  font-size: 3.5rem; /* Reduced font size for title */
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* Space below title */
+  color: #ffffff; /* Ensure title is bright white */
+}
+
+.main-subtitle {
+  font-size: 1.8rem; /* Reduced font size for subtitle */
+  margin-bottom: 2rem; /* Space below subtitle */
+  color: #ffffff; /* Ensure subtitle is bright white */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for depth */
+}
+
+/* Add an overlay effect to darken the background image */
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 3rem; /* Adjust title size for smaller screens */
   }
-  
-  .intro {
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a background color with transparency to make text stand out */
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 400px; /* Limit the width of the text box */
+
+  .main-subtitle {
+    font-size: 1.6rem; /* Adjust subtitle size for smaller screens */
   }
-  
-  .intro-title {
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.2rem; /* Adjust title size for very small screens */
   }
-  
-  .intro-text {
-    font-size: 1.2rem;
-    color: white;
+
+  .main-subtitle {
+    font-size: 1.4rem; /* Adjust subtitle size for very small screens */
   }
-  
+}

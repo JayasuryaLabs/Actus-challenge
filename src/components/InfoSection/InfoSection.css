@@ -1,14 +1,18 @@
+/* InfoSection.css */
+
 .info-section {
-  background-color: #000; /* Black background for the section */
+  background-color: #000; /* Background color for the section */
   color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin: 20px auto;
-  width: 90%;
   max-width: 900px;
   transition: max-height 0.3s ease;
   overflow: hidden;
   cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .section-header {
@@ -16,12 +20,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  cursor: pointer; /* Indicate clickable area */
+}
+
+.header-content {
+  /* Container to center the heading */
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center horizontally */
 }
 
 .section-title {
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
+  /* Add text shadow for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-button {
@@ -32,20 +46,34 @@
   cursor: pointer;
 }
 
+/* Added close button styling */
+.close-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .section-content {
   padding: 20px;
-  background-color: #222; /* Slightly lighter black for the content area */
+  /* Remove the black background */
+  /* background-color: #222; */ /* Slightly lighter black for the content area */
 }
 
 .section-subtitle {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  /* Add text shadow for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .content-heading {
   font-size: 1.5rem;
   margin-top: 20px;
   margin-bottom: 10px;
+  /* Add text shadow for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .prizes-list,
@@ -55,6 +83,8 @@
 .extra-points-list {
   list-style-type: disc;
   margin-left: 20px;
+  /* Add text shadow for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .prizes-list li,
@@ -67,4 +97,56 @@
 
 .info-section.open {
   max-height: 1000px; /* Adjust this value based on content */
+  overflow: auto; /* Enable scrolling if content exceeds max-height */
+}
+
+.button-info {
+  position: relative;
+  border: none;
+  background: transparent;
+  --stroke-color: #ffffff7c;
+  --ani-color: rgba(95, 3, 244, 0);
+  --color-gar: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+  letter-spacing: 3px;
+  font-size: 2em;
+  font-family: "Arial";
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--stroke-color);
+  cursor: pointer;
+}
+
+.front-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  background: var(--color-gar);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200%;
+  overflow: hidden;
+  transition: all 1s;
+  animation: ani 8s infinite;
+  border-bottom: 2px solid transparent;
+}
+
+.button-info:hover .front-text {
+  width: 100%;
+  border-bottom: 2px solid #03a9f4;
+  -webkit-text-stroke: 1px var(--ani-color);
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 400%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
 }

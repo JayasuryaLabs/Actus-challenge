@@ -10,13 +10,19 @@ const InfoSection = () => {
 
   return (
     <div className={`info-section ${isOpen ? 'open' : ''}`}>
-      <div className="section-header" onClick={toggleSection}>
-        <h1 className="section-title">Galadriel</h1>
-        <button className="dropdown-button">
-          {isOpen ? '-' : '+'}
-        </button>
+      <div className="section-header">
+        <div className="header-content">
+          <h1 className="button-info" data-text="Awesome" onClick={toggleSection}>
+            <span className="actual-text">&nbsp;Galadriel&nbsp;</span>
+            <span aria-hidden="true" className="front-text">&nbsp;Galadriel&nbsp;</span>
+          </h1>
+        </div>
+        {isOpen && (
+          <button className="close-button" onClick={toggleSection}>
+            &times; {/* X symbol to close */}
+          </button>
+        )}
       </div>
-      
 
       {isOpen && (
         <div className="section-content">
@@ -64,13 +70,7 @@ const InfoSection = () => {
           </div>
         </div>
       )}
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
     </div>
-    
   );
 };
 

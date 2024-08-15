@@ -1,10 +1,12 @@
 /* Example styles */
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap');
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Gentium Basic', serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color:#000;
 }
+
 
 .header {
   background-color: #333;
@@ -16,13 +18,11 @@ body {
 .main-content {
   padding: 20px;
 }
-
 .footer {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 10px;
-  position: fixed;
+  padding: 3px;
   bottom: 0;
   width: 100%;
 }
