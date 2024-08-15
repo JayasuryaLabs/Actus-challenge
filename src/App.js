@@ -3,7 +3,7 @@ import Footer from './components/Footer';
 import Main from './components/Main/MainContent';
 import HackathonInfo from './components/HackathonInfo/HackathonInfo';
 import InfoSection from './components/InfoSection/InfoSection';
-// import ThemeToggle from './components/ThemeToggle/ThemeToggle';
+// import ThemeToggle from './ThemeToggle/ThemeToggle';
 import './App.css';
 
 function App() {
