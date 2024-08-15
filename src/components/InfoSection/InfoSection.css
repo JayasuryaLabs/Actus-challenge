@@ -12,6 +12,7 @@
   padding: 20px; /* Add padding for internal spacing */
 }
 
+
 /* Gradient border effect */
 .info-section::before {
   content: "";
@@ -22,10 +23,10 @@
   height: 100%;
   background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
   background-size: 25% 100%;
-  animation: border-animation 0.75s linear infinite;
+  animation: border-animation 0.5s linear infinite;
   animation-play-state: paused; /* Animation paused by default */
   transform: translateX(-5%); /* Initial translate position */
-  transition: transform 0.25s ease-out;
+  transition: transform 0.5s ease-out;
   border-radius: 6px; /* Match the border radius of the .info-section */
   z-index: -1; /* Place behind the content */
   background-clip: border-box; /* Clip the background to the border */
@@ -70,7 +71,7 @@
 }
 
 /* Keyframes for animation */
-@keyframes ani {
+/* @keyframes ani {
   0% {
     background-position: 0%;
   }
@@ -80,7 +81,7 @@
   100% {
     background-position: 0%;
   }
-}
+} */
 
 /* Section header styling */
 .section-header {
@@ -152,7 +153,7 @@
   background-clip: border-box; /* Clip the background to the border */
   animation: border-animation 1s linear infinite;
   animation-play-state: paused; /* Animation paused by default */
-  transition: animation-play-state 0.25s ease-out;
+  transition: animation-play-state 0.5s ease-out;
 }
 
 .section-content:hover::before {
@@ -259,3 +260,95 @@
   -ms-overflow-style: none; /* For Internet Explorer, Edge */
   scrollbar-width: none; /* For Firefox */
 }
+/* Section content styling with animated border */
+.section-content {
+  position: relative;
+  padding: 20px;
+  background-color: #000; /* Background color for content area */
+  border-radius: 12px; /* Border radius for smooth corners */
+  overflow: hidden; /* Ensures the border effect does not overflow */
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  animation: appear 5s infinite; /* Smooth appearance when revealed */
+}
+
+/* "Looky" animated border */
+.section-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px; /* Match border-radius of the .section-content */
+  background: linear-gradient(60deg, #ff6ec4, #7873f5, #4bc0c8);
+  background-size: 400% 400%; /* Size for gradient animation */
+  z-index: -1; /* Place behind the content */
+  border: 4px solid transparent; /* Create space for the border effect */
+  background-clip: border-box; /* Clip the background to the border */
+  animation: lokky-border 5s linear infinite; /* Infinite loop for border animation */
+}
+
+/* Keyframes for "looky" animated border */
+/* @keyframes lokky-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+/* Keyframes for smooth appearance */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Subtitles and headings styling */
+.section-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  /* Add text shadow for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content-heading {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  /* Add text shadow for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* List styling */
+.prizes-list,
+.info-list,
+.ideas-list,
+.criteria-list,
+.extra-points-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  /* Add text shadow for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.prizes-list li,
+.info-list li,
+.ideas-list li,
+.criteria-list li,
+.extra-points-list li {
+  margin-bottom: 8px;
+}
+
+
+
