@@ -1,0 +1,55 @@
+.hackathon-info {
+    background-color: #1d1f22; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .hero-text {
+    margin-bottom: 50px;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .event-button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .event-button:hover {
+    background-color: #3a3f47;
+  }
+  
+  .bounties {
+    margin-top: 50px;
+  }
+  
+  .bounties h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .prize-pool {
+    background-color: #f3b189;
+    color: black;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  

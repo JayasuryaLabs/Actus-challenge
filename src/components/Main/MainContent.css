@@ -1,0 +1,29 @@
+.main-content {
+    background-image: url('../../../public/mainimg.avif');
+    background-size: cover;
+    background-position: center;
+    height: 80vh; /* Full height of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+    padding-left: 50px; /* Adjust padding as needed */
+  }
+  
+  .intro {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a background color with transparency to make text stand out */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px; /* Limit the width of the text box */
+  }
+  
+  .intro-title {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+    color: white;
+  }
+  

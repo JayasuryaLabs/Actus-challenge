@@ -1,0 +1,31 @@
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  :root {
+    --background-color-light: #ffffff;
+    --background-color-dark: #121212;
+    --text-color-light: #000000;
+    --text-color-dark: #ffffff;
+  }
+  
+  body.light-mode {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+  }
+  
+  body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+  }
+  
+  .logo-light {
+    content: url('/logo-light.png'); /* Path to your light mode logo */
+  }
+  
+  .logo-dark {
+    content: url('/logo-dark.png'); /* Path to your dark mode logo */
+  }
+  
