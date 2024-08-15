@@ -1,20 +1,88 @@
-/* InfoSection.css */
-
+/* Main container for info section */
 .info-section {
-  background-color: #000; /* Background color for the section */
+  background-color: #000; /* Keep the background black */
   color: white;
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin: 20px auto;
   max-width: 900px;
-  transition: max-height 0.3s ease;
-  overflow: hidden;
+  position: relative; /* Required for the pseudo-element positioning */
+  overflow: hidden; /* Hide overflow for smooth transitions */
   cursor: pointer;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 20px; /* Add padding for internal spacing */
 }
 
+/* Gradient border effect */
+.info-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+  background-size: 25% 100%;
+  animation: border-animation 0.75s linear infinite;
+  animation-play-state: paused; /* Animation paused by default */
+  transform: translateX(-5%); /* Initial translate position */
+  transition: transform 0.25s ease-out;
+  border-radius: 6px; /* Match the border radius of the .info-section */
+  z-index: -1; /* Place behind the content */
+  background-clip: border-box; /* Clip the background to the border */
+}
+
+.info-section:hover::before {
+  animation-play-state: running; /* Start animation on hover */
+  transform: translateX(0); /* Reset translate position */
+  transition-duration: 0.75s;
+}
+
+/* Keyframes for border animation */
+@keyframes border-animation {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+/* Header content styling */
+.header-content {
+  position: relative;
+  border: none;
+  background: transparent;
+  --stroke-color: #ffffff7c;
+  --ani-color: rgba(95, 3, 244, 0);
+  --color-gar: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  letter-spacing: 3px;
+  font-size: 2em;
+  font-family: "Arial";
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--stroke-color);
+  cursor: pointer;
+  overflow: hidden; /* Ensure the gradient and animation stay within the container */
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.header-content:hover .front-text {
+  width: 100%;
+  border-bottom: 2px solid #03a9f4;
+  -webkit-text-stroke: 1px var(--ani-color);
+}
+
+/* Keyframes for animation */
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 400%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+/* Section header styling */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -23,6 +91,7 @@
   cursor: pointer; /* Indicate clickable area */
 }
 
+/* Center the header content */
 .header-content {
   /* Container to center the heading */
   flex: 1;
@@ -38,6 +107,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Dropdown button styling */
 .dropdown-button {
   background-color: transparent;
   border: none;
@@ -46,7 +116,7 @@
   cursor: pointer;
 }
 
-/* Added close button styling */
+/* Close button styling */
 .close-button {
   background-color: transparent;
   border: none;
@@ -55,12 +125,51 @@
   cursor: pointer;
 }
 
+/* Section content styling */
 .section-content {
+  position: relative;
   padding: 20px;
-  /* Remove the black background */
-  /* background-color: #222; */ /* Slightly lighter black for the content area */
+  background-color: #000; /* Background color for content area */
+  border-radius: 6px; /* Border radius to match the border effect */
+  overflow: hidden; /* Ensures the border effect does not overflow */
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
+/* Gradient border effect */
+.section-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px; /* Match border-radius of the .section-content */
+  background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+  background-size: 400% 400%; /* Size for gradient animation */
+  z-index: -1; /* Place behind the content */
+  border: 4px solid transparent; /* Create space for the border effect */
+  background-clip: border-box; /* Clip the background to the border */
+  animation: border-animation 1s linear infinite;
+  animation-play-state: paused; /* Animation paused by default */
+  transition: animation-play-state 0.25s ease-out;
+}
+
+.section-content:hover::before {
+  animation-play-state: running; /* Start animation on hover */
+}
+
+/* Keyframes for border animation */
+@keyframes border-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Subtitles and headings styling */
 .section-subtitle {
   font-size: 1.2rem;
   margin-bottom: 20px;
@@ -76,6 +185,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* List styling */
 .prizes-list,
 .info-list,
 .ideas-list,
@@ -95,11 +205,13 @@
   margin-bottom: 8px;
 }
 
+/* Open state for info section */
 .info-section.open {
   max-height: 1000px; /* Adjust this value based on content */
   overflow: auto; /* Enable scrolling if content exceeds max-height */
 }
 
+/* Button info styling */
 .button-info {
   position: relative;
   border: none;
@@ -116,6 +228,7 @@
   cursor: pointer;
 }
 
+/* Front text for button */
 .front-text {
   position: absolute;
   top: 0;
@@ -137,16 +250,12 @@
   -webkit-text-stroke: 1px var(--ani-color);
 }
 
-@keyframes ani {
-  0% {
-    background-position: 0%;
-  }
-
-  50% {
-    background-position: 400%;
-  }
-
-  100% {
-    background-position: 0%;
-  }
+/*  Remove the scrollbar for the .info-section */
+.info-section::-webkit-scrollbar {
+  display: none;
+}
+/*  Remove the scrollbar for the .info-section */
+.info-section {
+  -ms-overflow-style: none; /* For Internet Explorer, Edge */
+  scrollbar-width: none; /* For Firefox */
 }
