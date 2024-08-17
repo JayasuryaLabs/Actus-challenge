@@ -6,8 +6,8 @@ const HackathonInfo = () => {
   return (
     <section className="hackathon-info">
       <div className="hero-text">
-        <h1>Create the next big Web3 AI dApp!</h1>
-        <p>Are you ready to lead the next wave of digital innovation?<br></br> <br></br>This is your opportunity to develop dApps that leverages the power of web3 & AI.</p>
+        <h1>Create the next generation finance application!</h1>
+        <p>Are you ready to lead the next wave of Financial innovation ?<br></br> <br></br>This is your opportunity to develop apps that power next generation Finance.</p>
       <button className="cssbuttons-io">
         <span><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0h24v24H0z" fill="none"></path>

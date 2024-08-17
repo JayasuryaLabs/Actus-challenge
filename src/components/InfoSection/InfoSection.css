@@ -264,12 +264,12 @@
 .section-content {
   position: relative;
   padding: 20px;
-  background-color: #000; /* Background color for content area */
-  border-radius: 12px; /* Border radius for smooth corners */
+  background-color: #c1252500; /* Background color for content area */
+  border: 7px solid #8653b9; /* Border radius for smooth corners */
   overflow: hidden; /* Ensures the border effect does not overflow */
   width: 100%; /* Ensure full width */
   box-sizing: border-box; /* Include padding in width calculation */
-  animation: appear 5s infinite; /* Smooth appearance when revealed */
+
 }
 
 /* "Looky" animated border */
@@ -286,11 +286,9 @@
   z-index: -1; /* Place behind the content */
   border: 4px solid transparent; /* Create space for the border effect */
   background-clip: border-box; /* Clip the background to the border */
-  animation: lokky-border 5s linear infinite; /* Infinite loop for border animation */
 }
 
-/* Keyframes for "looky" animated border */
-/* @keyframes lokky-border {
+@keyframes lokky-border {
   0% {
     background-position: 0% 50%;
   }
@@ -300,19 +298,9 @@
   100% {
     background-position: 0% 50%;
   }
-} */
+} 
 
-/* Keyframes for smooth appearance */
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+
 
 /* Subtitles and headings styling */
 .section-subtitle {
@@ -349,6 +337,5 @@
 .extra-points-list li {
   margin-bottom: 8px;
 }
-
 
 

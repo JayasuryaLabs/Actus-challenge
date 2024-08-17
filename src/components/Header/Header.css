@@ -14,12 +14,12 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .header-content {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 
@@ -33,7 +33,7 @@ body {
 
 .tagline {
   font-size: 1.2rem;
-  margin: 5px 0 20px;
+  margin: 5px 0 0px;
   color: #bbbbbb;
 }
 
