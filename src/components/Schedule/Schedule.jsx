@@ -5,7 +5,6 @@ import './Schedule.css';
 const Schedule = () => {
   const [selectedWeek, setSelectedWeek] = useState(1);
 
-  // Define weekData as a constant
   const weekData = {
     1: [
       { date: 'Mon, Sept 3rd', time: 'timeslot 1', event: 'event description 1' },
@@ -25,10 +24,8 @@ const Schedule = () => {
     ],
   };
 
-  // Memoize the data based on the selected week
-  const data = useMemo(() => weekData[selectedWeek] || [], [selectedWeek]);
+  const data = useMemo(() => weekData[selectedWeek] || [], [selectedWeek, weekData]);
 
-  // Memoize the columns
   const columns = useMemo(
     () => [
       { Header: 'Date', accessor: 'date' },
