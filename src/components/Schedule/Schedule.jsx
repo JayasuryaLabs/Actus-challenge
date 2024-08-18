@@ -5,29 +5,30 @@ import './Schedule.css';
 const Schedule = () => {
   const [selectedWeek, setSelectedWeek] = useState(1);
 
+  // Define weekData as a constant
   const weekData = {
-    1:[
+    1: [
       { date: 'Mon, Sept 3rd', time: 'timeslot 1', event: 'event description 1' },
       { date: 'Tue, Sept 4th', time: 'timeslot 1', event: 'event description 1' },
       { date: 'Wed, Sept 5th', time: 'timeslot 1', event: 'event description 1' },
     ],
-    
-    2:[
+    2: [
       { date: 'Mon, Sept 9th', time: 'timeslot 2', event: 'event description 2' },
       { date: 'Tue, Sept 10th', time: 'timeslot 2', event: 'event description 2' },
       { date: 'Wed, Sept 11th', time: 'timeslot 2', event: 'event description 2' },
     ],
-    
     3: [
-      { date: 'Mon, Sept 16th', time: 'timeslot 3', event: 'event description 3'  },
+      { date: 'Mon, Sept 16th', time: 'timeslot 3', event: 'event description 3' },
     ],
     4: [
-      { date: 'Mon, Sept 23rd',time: 'timeslot 4', event: 'event description 4'  },
+      { date: 'Mon, Sept 23rd', time: 'timeslot 4', event: 'event description 4' },
     ],
   };
 
-  const data = useMemo(() => weekData[selectedWeek], [selectedWeek]);
+  // Memoize the data based on the selected week
+  const data = useMemo(() => weekData[selectedWeek] || [], [selectedWeek]);
 
+  // Memoize the columns
   const columns = useMemo(
     () => [
       { Header: 'Date', accessor: 'date' },
@@ -53,21 +54,25 @@ const Schedule = () => {
       </div>
       <table {...getTableProps()} className="table">
         <thead>
-          {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps()} key={column.id}>
+                  {column.render('Header')}
+                </th>
               ))}
             </tr>
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
+          {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map(cell => (
-                  <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+              <tr {...row.getRowProps()} key={row.id}>
+                {row.cells.map((cell) => (
+                  <td {...cell.getCellProps()} key={cell.column.id}>
+                    {cell.render('Cell')}
+                  </td>
                 ))}
               </tr>
             );
