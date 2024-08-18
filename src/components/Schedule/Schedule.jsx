@@ -5,7 +5,7 @@ import './Schedule.css';
 const Schedule = () => {
   const [selectedWeek, setSelectedWeek] = useState(1);
 
-  const weekData = {
+  const weekData = useMemo(() => ({
     1: [
       { date: 'Mon, Sept 3rd', time: 'timeslot 1', event: 'event description 1' },
       { date: 'Tue, Sept 4th', time: 'timeslot 1', event: 'event description 1' },
@@ -22,7 +22,7 @@ const Schedule = () => {
     4: [
       { date: 'Mon, Sept 23rd', time: 'timeslot 4', event: 'event description 4' },
     ],
-  };
+  }), []);
 
   const data = useMemo(() => weekData[selectedWeek] || [], [selectedWeek, weekData]);
 
